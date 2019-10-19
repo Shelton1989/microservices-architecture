@@ -1,15 +1,14 @@
 'use strict';
 
-const properties = require('../package.json');
 const distance = require('../service/distance');
 
 const controllers = {
-    about: (req, res) => {
-        const aboutInfo = {
-            name: properties.name,
-            version: properties.version
+    message: (req, res) => {
+        console.log(req.body)
+        const response = {
+            message: "This is a successful response",
         };
-        res.json(aboutInfo);
+        res.json(response);
     },
 
     get_distance: (req, res) => {
@@ -17,7 +16,6 @@ const controllers = {
             if (err) {
                 res.send(err);
             };
-
             res.json(dist);
         });
     },
