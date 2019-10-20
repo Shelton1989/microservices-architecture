@@ -1,5 +1,7 @@
 /node_modules/
 /server/node_modules/
-*lock.json
+/receiver/node_modules/
+/sender/node_modules/
+package*lock.json
 yarn.lock
 .DS_Store
