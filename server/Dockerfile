@@ -16,7 +16,7 @@ RUN npm audit --fix
 COPY . .
 
 # Expose a port for container access
-EXPOSE 8080
+EXPOSE 8000
 
 # Run the service
 CMD ["node", "server.js"]
