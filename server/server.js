@@ -26,6 +26,8 @@ routes(app);
 io.on('connection', (socket) => {
     console.log('A user connected');
     socket.on('sendComms', (message) => {
+        socket.broadcast.emit('incommingMessage', message)
+        socket.emit('response', 'We have recieved your SOS. Help is on the way.')
         console.log('New message that reads: ' + message.message)
     })
     socket.on('disconnect', () => {

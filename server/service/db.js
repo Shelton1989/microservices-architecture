@@ -1,8 +1,11 @@
-const Pool = require('pg').Pool
+const Pool = require('pg').Pool;
+
 const pool = new Pool({
-    user: 'me',
+    user: 'postgres',
     host: 'localhost',
-    database: 'api',
-    password: 'password',
-    port: 5432,
-})
+    database: 'microservices',
+    password: 'postgres',
+    port: 5555,
+});
+
+module.exports = pool;

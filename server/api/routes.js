@@ -9,6 +9,6 @@ module.exports = (app) => {
         });
     app.route('/message/')
         .post(controller.message);
-    app.route('/distance/:zip1/:zip2')
-        .get(controller.get_distance);
+    app.route('/get-alerts/')
+        .get(controller.get_alerts);
 };
