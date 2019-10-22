@@ -1,0 +1,32 @@
+version: "3"
+services:
+  database:
+    build: ./db
+    container_name: database
+    expose: 
+      - "5432"
+    ports: 
+      - "5432:5432"
+  backend:
+    build: ./server
+    container_name: backend
+    links:
+      - database
+    depends_on:
+      - database
+    ports:
+      - "8000:8000"
+  frontend_sender:
+    build: ./sender
+    container_name: frontend_sender
+    depends_on:
+      - backend
+    ports:
+      - "8001:80"
+  frontend_receiver:
+    build: ./receiver
+    container_name: frontend_receiver
+    depends_on:
+      - backend
+    ports:
+      - "8002:80"

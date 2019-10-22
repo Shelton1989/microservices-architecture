@@ -6,7 +6,7 @@ const RequestsTable = (props) => {
     const { requests } = props
 
     let content = (<tr>
-        <td colSpan={5}>There are currently no records.</td>
+        <td colSpan={6}>There are currently no records.</td>
     </tr>)
 
     if (requests) {
